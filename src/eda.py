@@ -22,3 +22,17 @@ plt.tight_layout()
 plt.savefig("reports/figures/churn_by_contract.png")
 print("\nChart saved to reports/figures/churn_by_contract.png")
 plt.show()
+
+# Churn by tenure
+print("\n" + "=" * 50)
+print("Average tenure: Churned vs Not Churned")
+print(df.groupby("Churn")["tenure"].mean())
+
+plt.figure(figsize=(8, 5))
+sns.histplot(data=df, x="tenure", hue="Churn", multiple="stack", bins=30)
+plt.title("Tenure Distribution: Churned vs Retained Customers")
+plt.xlabel("Tenure (months)")
+plt.tight_layout()
+plt.savefig("reports/figures/churn_by_tenure.png")
+print("\nChart saved to reports/figures/churn_by_tenure.png")
+plt.show()
