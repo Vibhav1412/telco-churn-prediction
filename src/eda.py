@@ -36,3 +36,17 @@ plt.tight_layout()
 plt.savefig("reports/figures/churn_by_tenure.png")
 print("\nChart saved to reports/figures/churn_by_tenure.png")
 plt.show()
+
+# Churn by Monthly Charges
+print("\n" + "=" * 50)
+print("Average Monthly Charges: Churned vs Not Churned")
+print(df.groupby("Churn")["MonthlyCharges"].mean())
+
+plt.figure(figsize=(8, 5))
+sns.boxplot(data=df, x="Churn", y="MonthlyCharges")
+plt.title("Monthly Charges: Churned vs Retained Customers")
+plt.xlabel("Churn (0 = No, 1 = Yes)")
+plt.tight_layout()
+plt.savefig("reports/figures/churn_by_monthlycharges.png")
+print("\nChart saved to reports/figures/churn_by_monthlycharges.png")
+plt.show()
