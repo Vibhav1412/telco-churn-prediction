@@ -1,4 +1,6 @@
 import pandas as pd
+import joblib
+import os
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -53,3 +55,13 @@ print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 print("\nConfusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
+
+# Save the trained model and scaler for later use (e.g. in the Streamlit app)
+os.makedirs("models", exist_ok=True)
+joblib.dump(model, "models/churn_model.pkl")
+joblib.dump(scaler, "models/scaler.pkl")
+
+# Save the column names too - needed to match input format later
+joblib.dump(X.columns.tolist(), "models/feature_columns.pkl")
+
+print("\nModel, scaler, and feature columns saved to models/ folder")
