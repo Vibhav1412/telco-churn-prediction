@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large/generated files (keep raw data out of git if it's large)
+# Uncomment the next line if your dataset is large:
+# data/raw/*.csv
+
+# Models (optional - uncomment if models get large)
+# models/*.pkl
