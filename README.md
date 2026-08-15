@@ -72,3 +72,6 @@ Python · pandas · scikit-learn · XGBoost · SHAP · Streamlit · matplotlib/s
 ## Author
 
 Built by [Your Name] — [LinkedIn] · [Portfolio]
+
+## Status
+Project scaffold pushed to GitHub. Model + Streamlit app in progress.
